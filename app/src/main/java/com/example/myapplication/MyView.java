@@ -70,5 +70,10 @@ public class MyView extends View {
         paint.setColor(Color.rgb(80, 40, 30));
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawPath(path, paint);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setColor(Color.BLACK);
+        Rect door = new Rect(300, getBottom()-500, 400, getBottom()-300);
+        canvas.drawRect(door, paint);
+        canvas.drawCircle(250, getBottom()-700, 50, paint);
     }
 }
