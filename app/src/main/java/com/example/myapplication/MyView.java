@@ -59,6 +59,7 @@ public class MyView extends View {
         int x3=400;
         int y3=getBottom()-600;
         Path path = new Path();
+        path.setFillType(Path.FillType.EVEN_ODD);
         path.moveTo(x1, y1);
         path.lineTo(x2, y2);
         path.moveTo(x2, y2);
@@ -74,6 +75,29 @@ public class MyView extends View {
         paint.setColor(Color.BLACK);
         Rect door = new Rect(300, getBottom()-500, 400, getBottom()-300);
         canvas.drawRect(door, paint);
+        paint.setColor(Color.rgb(80, 40, 30));
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
         canvas.drawCircle(250, getBottom()-700, 50, paint);
+        paint.setColor(Color.BLACK);
+        paint.setStyle(Paint.Style.STROKE);
+        Rect window = new Rect (110, getBottom()-500, 200, getBottom()-400 );
+        canvas.drawRect(window, paint);
+        paint.setColor(Color.BLUE);
+
+        for (int i = 9; i>0; i-=1 ){
+            canvas.drawLine(110, getBottom()-500+(i*10), 200, getBottom()-500+(i*10), paint);
+        }
+        for (int i = 8; i>0; i-=1 ){
+            canvas.drawLine(110+i*10, getBottom()-500, 110+(i*10), getBottom()-400, paint);
+        }
+        paint.setColor(Color.YELLOW);
+        //float rotate_center_x = 350;
+        //float rotate_center_y = getBottom()-400;
+        //float rotate_angle = -45;
+        //canvas.rotate(-rotate_angle, rotate_center_x, rotate_center_y);
+        //rotate_angle=45;
+        //canvas.rotate(-rotate_angle, rotate_center_x, rotate_center_y);
+        //for (int i =10; i>0; i-=1){
+         //   canvas.drawLine(rotate_center_x+100, rotate_center_y+100, rotate_center_x-100, rotate_center_y-100, paint);
     }
 }
